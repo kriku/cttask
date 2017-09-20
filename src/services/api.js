@@ -2,7 +2,7 @@ var requestFakeServer = function(req) {
   console.log('requestFakeServer', req);
   return new Promise((resolve, reject) => {
     let dice = Math.random()*10;
-    if (dice > 10) reject('Internal server error');
+    if (dice > 5) reject('Internal server error');
     resolve('horay! ' + req);
   });
 }
