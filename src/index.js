@@ -1,4 +1,4 @@
-// for generators
+// for generators and promises
 import "babel-polyfill";
 
 import { createStore, applyMiddleware } from 'redux';
