@@ -1,16 +1,13 @@
-var requestFakeServer = function(req) {
-  console.log('requestFakeServer', req);
-  return new Promise((resolve, reject) => {
-    let dice = Math.random()*10;
-    if (dice > 5) reject('Internal server error');
-    resolve('horay! ' + req);
-  });
-}
+import fakedb from './fakedb'
 
 const api = {
   user: {
-    get: requestFakeServer,
-    add: requestFakeServer
+    get: fakedb.getUser,
+    add: fakedb.addUser
+  },
+  org: {
+    get: fakedb.getOrg,
+    set: fakedb.setOrg
   }
 };
 
